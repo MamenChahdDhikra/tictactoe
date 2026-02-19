@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Tic-Tac-Toe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div id="particles-js"></div>
+
+    <div class="container">
+        <header>
+            <h1 class="glitch-text" data-text="TIC-TAC-TOE">TIC-TAC-TOE</h1>
+            <p class="subtitle">NEURAL NETWORK ARENA</p>
+        </header>
+
+        <main>
+            <div class="stats-container glass-morphism">
+                <div class="stat-item">
+                    <span class="stat-label">PLAYER</span>
+                    <span id="player-score" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">AI</span>
+                    <span id="ai-score" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">DRAWS</span>
+                    <span id="draw-score" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">WIN RATE</span>
+                    <span id="win-rate" class="stat-value">0%</span>
+                </div>
+            </div>
+
+            <div class="controls-container">
+                <div class="difficulty-selector">
+                    <button class="diff-btn active" data-diff="easy">EASY</button>
+                    <button class="diff-btn" data-diff="medium">MEDIUM</button>
+                    <button class="diff-btn" data-diff="hard">HARD</button>
+                </div>
+                <div class="symbol-selector">
+                    <button class="sym-btn active" data-sym="X">PLAYER X</button>
+                    <button class="sym-btn" data-sym="O">PLAYER O</button>
+                </div>
+            </div>
+
+            <div class="board-wrapper">
+                <div id="board" class="board">
+                    <div class="cell" data-index="0"></div>
+                    <div class="cell" data-index="1"></div>
+                    <div class="cell" data-index="2"></div>
+                    <div class="cell" data-index="3"></div>
+                    <div class="cell" data-index="4"></div>
+                    <div class="cell" data-index="5"></div>
+                    <div class="cell" data-index="6"></div>
+                    <div class="cell" data-index="7"></div>
+                    <div class="cell" data-index="8"></div>
+                </div>
+                <div id="thinking-indicator" class="thinking-indicator hidden">
+                    <div class="spinner"></div>
+                    <span>AI THINKING...</span>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="undo-btn" class="cyber-btn">UNDO</button>
+                <button id="redo-btn" class="cyber-btn">REDO</button>
+                <button id="reset-btn" class="cyber-btn">RESET</button>
+                <button id="new-game-btn" class="cyber-btn primary">NEW GAME</button>
+            </div>
+        </main>
+    </div>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content glass-morphism">
+            <h2 id="modal-title">GAME OVER</h2>
+            <p id="modal-message">Player Wins!</p>
+            <button id="play-again-btn" class="cyber-btn primary">PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <audio id="sound-move" src="assets/sounds/move.mp3"></audio>
+    <audio id="sound-win" src="assets/sounds/win.mp3"></audio>
+    <audio id="sound-draw" src="assets/sounds/draw.mp3"></audio>
+    <audio id="sound-hover" src="assets/sounds/hover.mp3"></audio>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/particles-config.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
